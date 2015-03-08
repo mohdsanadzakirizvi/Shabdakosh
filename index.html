@@ -3,9 +3,11 @@
 
 <head>
     <title>Shabdakosha</title>
- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <script src="js/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </head>
 
 <body ngCloak>
@@ -14,32 +16,33 @@
 
 
 
-    <img src="images/bg.jpg" style="width:100%;position:absolute;">
+    <div>
+        <img src="images/bg.jpg" class="background">
+    </div>
 
-
-    <div class="btn-group-vertical" role="group" style="margin-top:100px;" ng-hide="gocats">
-        <button type="button" class="btn btn-default" style="margin:20px;background:transparent;" ng-click="gocats=!gocats">
-            <img src="images/button_play_hot.png" style="width:100%;">
+    <div class="btn-group-vertical button-holder" role="group" ng-hide="gocats">
+        <button type="button" class="btn btn-default button" ng-click="gocats=!gocats">
+            <img src="images/button_play_hot.png" class="button-image">
         </button>
 
-        <button type="button" class="btn btn-default" style="margin:20px;background:transparent;">
-            <img src="images/button_challenge_hot.png" style="width:100%;">
+        <button type="button" class="btn btn-default button">
+            <img src="images/button_challenge_hot.png" class="button-image">
         </button>
 
-        <button type="button" class="btn btn-default" style="margin:20px;background:transparent;">
-            <img src="images/button_scores.png" style="width:100%;">
+        <button type="button" class="btn btn-default button">
+            <img src="images/button_scores.png" class="button-image">
         </button>
     </div>
 
 
 
 
-    <form style="border: 4px solid black; max-width:500px;position:absolute;margin-left:5%;margin-top:;padding:10px;background-color:#ff3232;opacity:.85;" ng-controller=" formCtrl as fc" ng-submit="submit()" ng-show="gocats">
+    <form class="form-container" ng-controller="formCtrl as fc" ng-submit="submit()" ng-show="gocats">
 
         <div class="form-group" ng-hide="cat1">
             <label>What is your native language?</label>
             <input type="text" class="form-control" placeholder="enter language" ng-model="item.lang">
-            <div class="form-group" style="display:block;font-color:blue; margin:10px auto; margin-left:370px;">
+            <div class="form-group first-form">
                 <input type="submit" class="form-control" ng-click="cat1=!cat1">
             </div>
 
@@ -47,16 +50,15 @@
 
         <div class="form-group" ng-show="cat1">
 
-            <strong style="font-family: 'Rockwell Extra Bold', 'Rockwell Bold', monospace;
-	font-size: 24px;">What is the meaning/synonym of the word in your language?</strong>
+            <strong class="main-title-form2">What is the meaning/synonym of the word in your language?</strong>
 
 
             <p>
-                <label style="border:1px solid white;margin-left:40%;background-color:white;padding:6px;font-family:Tahoma;font-size:20px;">{{words[x]}}</label>
+                <label class="words">{{words[x]}}</label>
             </p>
             <img ng-src="{{image[x]}}"></img>
 
-            <p style="background-color:white;margin-top:10px;">Your Translation is : {{input}}</p>
+            <p class="translation-text">Your Translation is : {{input}}</p>
 
             <p>
                 <label>Translate The Word</label>
@@ -66,7 +68,7 @@
 
             <small>Your selected native language is : {{item.lang}}</small>
 
-            <div class="form-group" style="display:block; margin:10px auto; margin-left:370px;">
+            <div class="form-group unknown-form">
                 <input type="submit" class="form-control">
             </div>
 
@@ -77,15 +79,15 @@
 
     </form>
 
-    <div id="right_box" style="margin-left:60%;border:2px solid black;position:absolute;z-index:99;height:600px;width:450px;background-color:#ff3232;opacity:.8;margin-top:0px;" ng-show="gocats" ng-controller="tableCtrl as tc">
-        <h3 style="font-family: 'Rockwell Extra Bold', 'Rockwell Bold', monospace;border-bottom:1px solid black;">  YOUR CONTRIBUTION</h3>
+    <div id="right_box" class="right-box" ng-show="gocats" ng-controller="tableCtrl as tc">
+        <h3 class="contribute">  YOUR CONTRIBUTION</h3>
 
 
         <h5>Number of Translations: 
 <label>{{c}}</label></h5>
         <h5>Votes : 5</h5>
-        <div style="border-top:1px solid black;border-bottom:1px solid black;margin-top:20px;margin-bottom:20px;">YOUR AWARDS</div>
-        <div style="width:100%;margin-top:20px;">
+        <div class="awards">YOUR AWARDS</div>
+        <div class="leader-board">
             <h4>Weekly Leaderbord</h4>
             <p>Rank 1: RohitFOSS</p>
             <p>Rank 2: Sujan</p>
@@ -101,9 +103,9 @@
 
 
 
-    <script src="js/angular.min.js"></script>
+
     <script src="js/app.js"></script>
-    
+
 </body>
 
 </html>
