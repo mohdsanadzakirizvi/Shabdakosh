@@ -14,5 +14,8 @@ Problem Statement: This work addresses the current Gap in google search for tran
 by crowdsourcing appropriate, non-literal, human contributed translations, by building a community and gamifying the learning platform.
 
 
-NOTE: This is just a prototype build to show the game experience only. Only the play button works.
+NOTE : This is just a prototype build to show the game experience only. Only the play button works.
+      
+DISCLAIMER : The art works(the background image and button images) are not designed by me or owned by me,
+             they are from an open source project.
 
