@@ -19,3 +19,4 @@ NOTE : This is just a prototype build to show the game experience only. Only the
 DISCLAIMER : The art works(the background image and button images) are not designed by me or owned by me,
              they are from an open source project.
 
+LICENSE: This project is licensed under terms of MIT(http://opensource.org/licenses/MIT) license.
